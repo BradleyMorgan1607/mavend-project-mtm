@@ -55,6 +55,29 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<deploymentType>cloudhub</deploymentType>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>${uid}</username>
+					<password>${pwd}</password>
+					<workerType>Micro</workerType>
+					<redeploy>true</redeploy>
+					<environment>Sandbox</environment>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -65,58 +88,58 @@
 			<groupId>com.mulesoft.muleesb</groupId>
 			<artifactId>mule-core-ee</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- Xml configuration -->
 		<dependency>
 			<groupId>com.mulesoft.muleesb.modules</groupId>
 			<artifactId>mule-module-spring-config-ee</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- Mule Transports -->
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-file</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-http</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.mulesoft.muleesb.transports</groupId>
 			<artifactId>mule-transport-jdbc-ee</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.mulesoft.muleesb.transports</groupId>
 			<artifactId>mule-transport-jms-ee</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-vm</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- Mule Modules -->
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-scripting</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-xml</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- non-mule dependencies -->
 		<dependency>
@@ -153,31 +176,31 @@
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-http</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-spring-config</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-db</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-jms</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-json</artifactId>
 			<version>${mule.version}</version>
-			<scope>provided</scope>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
